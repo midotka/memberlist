@@ -10,6 +10,7 @@ Text Domain: wp-memberlist
 Domain Path: /languages
 */
 
+// https://generatewp.com/post-type/
 // Register Custom Post Type
 function wp_memberlist_add_post_type() {
 
