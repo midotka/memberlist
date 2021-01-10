@@ -10,7 +10,6 @@ Text Domain: wp-memberlist
 Domain Path: /languages
 */
 
-// https://generatewp.com/post-type/
 // Register Custom Post Type
 function wp_memberlist_add_post_type() {
 
@@ -53,6 +52,7 @@ function wp_memberlist_add_post_type() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
+		'menu_icon'             => 'dashicons-admin-users',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
@@ -65,21 +65,3 @@ function wp_memberlist_add_post_type() {
 
 }
 add_action( 'init', 'wp_memberlist_add_post_type', 0 );
-
-
-add_action( 'add_meta_boxes', 'wp_memberlist_add_custom_meta_box' );
-function wp_memberlist_add_custom_meta_box() {
-    add_meta_box(
-    'wp_memberlist_editor',
-    __( 'Member', 'wp-memberlist' ),
-    'wp_memberlist_editor',
-    'wp_memberlist',
-    'advanced',
-    'high'
-    );
-}
-
-
-function wp_memberlist_editor( $post ) {
-    echo 'Willkommen bei unserer ersten Meta Box!';
-}
